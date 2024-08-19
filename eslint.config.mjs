@@ -4,14 +4,11 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginQuery from '@tanstack/eslint-plugin-query'
 
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
-
 export default [
   {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
-  eslintPluginPrettierRecommended,
   ...pluginQuery.configs['flat/recommended'],
 ];
